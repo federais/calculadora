@@ -1,0 +1,450 @@
+.rootMatematica {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  min-height: 100vh;
+  font-family: Hack, monospace;
+}
+
+div {
+    color: #727272;
+    text-align: center;
+    border-radius: 2px;
+  }
+  
+  p {
+    margin: 16px;
+    font-size: 96px;
+    color: #ccc;
+    text-transform: uppercase;
+    font-weight: 600;
+    transition: all 1s ease-in-out;
+    position: relative;
+  }
+  
+  p::before {
+    content: attr(data-item);
+    transition: all 1s ease-in-out;
+    color: #98B4D4;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 0;
+    overflow: hidden;
+  }
+  
+  p:hover::before {
+    width: 100%;
+  }
+  
+  nav {
+    margin: 25px;
+    background: #f9f9f9;
+    padding: 16px;
+  }
+  
+  nav .menuItems {
+    list-style: none;
+    display: flex;
+  }
+  
+  nav .menuItems li {
+    margin: 50px;
+  }
+  
+  nav .menuItems li a {
+    text-decoration: none;
+    color: #8f8f8f;
+    font-size: 24px;
+    font-weight: 400;
+    transition: all 0.5s ease-in-out;
+    position: relative;
+    text-transform: uppercase;
+  }
+  
+  nav .menuItems li a::before {
+    content: attr(data-item);
+    transition: 0.5s;
+    color: #98B4D4;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 0;
+    overflow: hidden;
+  }
+  
+  nav .menuItems li a:hover::before {
+    width: 100%;
+    transition: all 0.5s ease-in-out;
+  }
+  
+  footer {
+    position: absolute;
+    font-size: 12px;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    font-size: 14px;
+    background-color: #f1f1f1;
+    color: #000;
+    text-align: center;
+  }
+  
+  footer a {
+    text-decoration: none;
+    color: inherit;
+    border-bottom: 1px solid;
+  }
+  
+  footer a:hover {
+    border-bottom: 1px transparent;
+  }
+  
+  /* AQUI CSS PARA INPUTS */
+  .form__group {
+    position: relative;
+    padding: 15px 0 0;
+    margin-top: 10px;
+    width: 50%;
+  }
+  
+  .form__field:disabled {
+    cursor: not-allowed;
+    border-bottom: #11998e solid 2px;
+    border-radius: 2px;
+  }
+  
+  .blocked {
+    cursor: not-allowed;
+    color: #11998e !important;
+  }
+  
+  
+  .form__field {
+    text-align: center;
+    font-family: inherit;
+    width: 20%;
+    border: 0;
+    border-bottom: 2px solid #9b9b9b;
+    outline: 0;
+    font-size: 1.3rem;
+    color: #000;
+    padding: 7px 0;
+    background: transparent;
+    transition: border-color 0.2s;
+  }
+  
+  .form__field::placeholder {
+    color: transparent;
+  }
+  
+  .form__field:placeholder-shown~.form__label {
+    font-size: 1.3rem;
+    cursor: text;
+    top: 20px;
+  }
+  
+  .form__label {
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 1rem;
+    color: #9b9b9b;
+  }
+  
+  .form__field:focus {
+    padding-bottom: 6px;
+    font-weight: 700;
+    border-width: 3px;
+    border-image: linear-gradient(to right, #11998e, #38ef7d);
+    border-image-slice: 1;
+  }
+  
+  .form__field:focus~.form__label {
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 1rem;
+    color: #11998e;
+    font-weight: 700;
+  }
+  
+  
+  /* CSS PARA BOTAO */
+  svg {
+    position: absolute;
+    top: -4000px;
+    left: -4000px;
+  }
+  
+  #gooey-button {
+    margin-top: 80px;
+    cursor: pointer;
+    padding: 1rem;
+    font-size: 1.5rem;
+    font-family: Hack, monospace;
+    border: none;
+    color: #0c1016;
+    filter: url("#gooey");
+    position: relative;
+    background-color: #11998e;
+  }
+  
+  #gooey-button:focus {
+    outline: none;
+  }
+  
+  #gooey-button .bubbles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+  
+  #gooey-button .bubbles .bubble {
+    background-color: #11998e;
+    border-radius: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    z-index: -1;
+  }
+  
+  #gooey-button .bubbles .bubble:nth-child(1) {
+    left: 78px;
+    width: 25px;
+    height: 25px;
+    animation: move-1 3.02s infinite;
+    animation-delay: 0.2s;
+  }
+  
+  #gooey-button .bubbles .bubble:nth-child(2) {
+    left: 35px;
+    width: 25px;
+    height: 25px;
+    animation: move-2 3.04s infinite;
+    animation-delay: 0.4s;
+  }
+  
+  #gooey-button .bubbles .bubble:nth-child(3) {
+    left: 77px;
+    width: 25px;
+    height: 25px;
+    animation: move-3 3.06s infinite;
+    animation-delay: 0.6s;
+  }
+  
+  #gooey-button .bubbles .bubble:nth-child(4) {
+    left: 51px;
+    width: 25px;
+    height: 25px;
+    animation: move-4 3.08s infinite;
+    animation-delay: 0.8s;
+  }
+  
+  #gooey-button .bubbles .bubble:nth-child(5) {
+    left: 25px;
+    width: 25px;
+    height: 25px;
+    animation: move-5 3.1s infinite;
+    animation-delay: 1s;
+  }
+  
+  #gooey-button .bubbles .bubble:nth-child(6) {
+    left: 22px;
+    width: 25px;
+    height: 25px;
+    animation: move-6 3.12s infinite;
+    animation-delay: 1.2s;
+  }
+  
+  #gooey-button .bubbles .bubble:nth-child(7) {
+    left: 61px;
+    width: 25px;
+    height: 25px;
+    animation: move-7 3.14s infinite;
+    animation-delay: 1.4s;
+  }
+  
+  #gooey-button .bubbles .bubble:nth-child(8) {
+    left: 73px;
+    width: 25px;
+    height: 25px;
+    animation: move-8 3.16s infinite;
+    animation-delay: 1.6s;
+  }
+  
+  #gooey-button .bubbles .bubble:nth-child(9) {
+    left: 71px;
+    width: 25px;
+    height: 25px;
+    animation: move-9 3.18s infinite;
+    animation-delay: 1.8s;
+  }
+  
+  #gooey-button .bubbles .bubble:nth-child(10) {
+    left: 63px;
+    width: 25px;
+    height: 25px;
+    animation: move-10 3.2s infinite;
+    animation-delay: 2s;
+  }
+  
+  @keyframes move-1 {
+    0% {
+      transform: translate(0, 0);
+    }
+  
+    99% {
+      transform: translate(0, -73px);
+    }
+  
+    100% {
+      transform: translate(0, 0);
+      opacity: 0;
+    }
+  }
+  
+  @keyframes move-2 {
+    0% {
+      transform: translate(0, 0);
+    }
+  
+    99% {
+      transform: translate(0, -116px);
+    }
+  
+    100% {
+      transform: translate(0, 0);
+      opacity: 0;
+    }
+  }
+  
+  @keyframes move-3 {
+    0% {
+      transform: translate(0, 0);
+    }
+  
+    99% {
+      transform: translate(0, -69px);
+    }
+  
+    100% {
+      transform: translate(0, 0);
+      opacity: 0;
+    }
+  }
+  
+  @keyframes move-4 {
+    0% {
+      transform: translate(0, 0);
+    }
+  
+    99% {
+      transform: translate(0, -57px);
+    }
+  
+    100% {
+      transform: translate(0, 0);
+      opacity: 0;
+    }
+  }
+  
+  @keyframes move-5 {
+    0% {
+      transform: translate(0, 0);
+    }
+  
+    99% {
+      transform: translate(0, -102px);
+    }
+  
+    100% {
+      transform: translate(0, 0);
+      opacity: 0;
+    }
+  }
+  
+  @keyframes move-6 {
+    0% {
+      transform: translate(0, 0);
+    }
+  
+    99% {
+      transform: translate(0, -109px);
+    }
+  
+    100% {
+      transform: translate(0, 0);
+      opacity: 0;
+    }
+  }
+  
+  @keyframes move-7 {
+    0% {
+      transform: translate(0, 0);
+    }
+  
+    99% {
+      transform: translate(0, -84px);
+    }
+  
+    100% {
+      transform: translate(0, 0);
+      opacity: 0;
+    }
+  }
+  
+  @keyframes move-8 {
+    0% {
+      transform: translate(0, 0);
+    }
+  
+    99% {
+      transform: translate(0, -119px);
+    }
+  
+    100% {
+      transform: translate(0, 0);
+      opacity: 0;
+    }
+  }
+  
+  @keyframes move-9 {
+    0% {
+      transform: translate(0, 0);
+    }
+  
+    99% {
+      transform: translate(0, -116px);
+    }
+  
+    100% {
+      transform: translate(0, 0);
+      opacity: 0;
+    }
+  }
+  
+  @keyframes move-10 {
+    0% {
+      transform: translate(0, 0);
+    }
+  
+    99% {
+      transform: translate(0, -65px);
+    }
+  
+    100% {
+      transform: translate(0, 0);
+      opacity: 0;
+    }
+  }

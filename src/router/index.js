@@ -6,6 +6,7 @@ import matematica from '../pages/math'
 
 //Matematica
 import pitagoras from '../pages/math/pitagoras'
+import baschara from '../pages/math/baschara'
 
 
 const router = () => {
@@ -16,6 +17,7 @@ const router = () => {
             {/* Matematica */}
             <Route exact path={'/matematica'} component={matematica} />
             <Route exact path={'/matematica/pitagoras'} component={pitagoras} />
+            <Route exact path={'/matematica/baschara'} component={baschara} />
 
 
         </Switch>

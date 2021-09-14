@@ -10,7 +10,7 @@ function App() {
   return (
     <>
       <HashRouter>
-        <Route basename={process.env.PUBLIC_URL} path='/' />
+        <Route path='/' />
         <ToastContainer autoClose={3000} position='top-left' />
       </HashRouter>
     </>

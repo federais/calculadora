@@ -1,5 +1,5 @@
 import Route from './router'
-import { BrowserRouter } from 'react-router-dom'
+import { HashRouter } from 'react-router-dom'
 import './reset.css'
 
 import 'react-toastify/dist/ReactToastify.css'
@@ -9,10 +9,10 @@ import { ToastContainer } from 'react-toastify'
 function App() {
   return (
     <>
-      <BrowserRouter>
+      <HashRouter>
         <Route basename={process.env.PUBLIC_URL} path='/' />
         <ToastContainer autoClose={3000} position='top-left' />
-      </BrowserRouter>
+      </HashRouter>
     </>
   )
 

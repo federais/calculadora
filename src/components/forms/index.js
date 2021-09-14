@@ -4,7 +4,11 @@ function Forms(props) {
             <div className="rootMatematica" >
                 <p>{props.title}</p>
 
-                <small>Deixe em branco o valor que deseja obter</small>
+                {
+                    !props.blankSpace ? (
+                        <small>Deixe em branco o valor que deseja obter</small>
+                    ) : (<></>)
+                }
                 <div className="form__group field">
                     <input type="number" className="form__field" placeholder={props.input1} id='cateto1' value={props.value1} onChange={e => props.setValue1(e.target.value)} />
                     <label for={props.input1} className="form__label">{props.input1}</label>
@@ -13,10 +17,17 @@ function Forms(props) {
                     <input type="number" className="form__field" placeholder={props.input2} id='cateto2' value={props.value2} onChange={e => props.setValue2(e.target.value)} />
                     <label htmlFor={props.input2} className="form__label">{props.input2}</label>
                 </div>
-                <div className="form__group field">
-                    <input type="number" className="form__field" placeholder={props.input2} id={props.input2} value={props.value3} onChange={e => props.setValue3(e.target.value)} />
-                    <label htmlFor="{props.input2}" className="form__label">{props.input2}</label>
-                </div>
+
+                {
+                    props.input3 ? (
+                        <div className="form__group field">
+                            <input type="number" className="form__field" placeholder={props.input3} id={props.input3} value={props.value3} onChange={e => props.setValue3(e.target.value)} />
+                            <label htmlFor={props.input3} className="form__label">{props.input3}</label>
+                        </div>
+                    ) : (
+                        <></>
+                    )
+                }
 
                 <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
                     <defs>

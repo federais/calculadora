@@ -10,6 +10,7 @@ function App() {
                     <ul className="menuItems">
                         <li><a href='/matematica/pitagoras' data-item='Pitagoras'>Pitagoras</a></li>
                         <li><a href='/matematica/baschara' data-item='Bhaskara'>Bhaskara</a></li>
+                        <li><a href='/matematica/contagem' data-item='Contagem'>Contagem</a></li>
                     </ul>
                 </nav>
             </section>

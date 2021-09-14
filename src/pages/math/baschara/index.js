@@ -10,7 +10,6 @@ function App() {
     const [valorC, setValorC] = useState('')
 
     function handleSubmit(e) {
-        console.log('Salve')
         const resultadoInput = document.querySelector('#resultado')
         let response = 0
         const delta = (valorB ** 2) - (4 * valorA * valorC)

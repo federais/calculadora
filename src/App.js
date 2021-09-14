@@ -10,7 +10,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <Route path='/' />
+        <Route basename={process.env.PUBLIC_URL} path='/' />
         <ToastContainer autoClose={3000} position='top-left' />
       </BrowserRouter>
     </>

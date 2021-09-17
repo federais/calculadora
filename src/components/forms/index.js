@@ -13,10 +13,17 @@ function Forms(props) {
                     <input type="number" className="form__field" placeholder={props.input1} id='cateto1' value={props.value1} onChange={e => props.setValue1(e.target.value)} />
                     <label for={props.input1} className="form__label">{props.input1}</label>
                 </div>
-                <div className="form__group field">
-                    <input type="number" className="form__field" placeholder={props.input2} id='cateto2' value={props.value2} onChange={e => props.setValue2(e.target.value)} />
-                    <label htmlFor={props.input2} className="form__label">{props.input2}</label>
-                </div>
+
+                {
+                    props.input2 ? (
+                        <div className="form__group field">
+                            <input type="number" className="form__field" placeholder={props.input2} id='cateto2' value={props.value2} onChange={e => props.setValue2(e.target.value)} />
+                            <label htmlFor={props.input2} className="form__label">{props.input2}</label>
+                        </div>
+                    ) : (
+                        <></>
+                    )
+                }
 
                 {
                     props.input3 ? (

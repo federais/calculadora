@@ -8,6 +8,7 @@ import matematica from '../pages/math'
 import pitagoras from '../pages/math/pitagoras'
 import baschara from '../pages/math/baschara'
 import contagem from '../pages/math/contagem'
+import sencostg from '../pages/math/sencostg'
 
 
 const router = () => {
@@ -20,6 +21,7 @@ const router = () => {
             <Route exact path={'/matematica/pitagoras'} component={pitagoras} />
             <Route exact path={'/matematica/baschara'} component={baschara} />
             <Route exact path={'/matematica/contagem'} component={contagem} />
+            <Route exact path={'/matematica/Sen|Cos|Tg'} component={sencostg} />
 
 
         </Switch>
